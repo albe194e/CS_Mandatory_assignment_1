@@ -40,11 +40,16 @@ public class FileHandler {
             parser.SetDelimiters(",");
 
             // Read and parse the CSV file line by line
+
             while (!parser.EndOfData)
             {
-                var fields = parser.ReadFields();
+                if (parser.LineNumber == 1) {
+                    //Will ignore the headers
+                    parser.ReadFields();
+                    continue;
+                }
 
-                Console.WriteLine(fields);
+                var fields = parser.ReadFields();
 
                 Club club = new Club(
                     fields[2],
@@ -56,9 +61,10 @@ public class FileHandler {
                     int.Parse(fields[8]),
                     fields[9]);
 
-
-
+                
+                Console.WriteLine("Club: " + club.GamesPlayed);
                 standings.Add(club.Name, club);
+
             }
         }
         catch (Exception ex)
