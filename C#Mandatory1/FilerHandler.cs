@@ -7,7 +7,7 @@ public class FileHandler {
     public void ReadData()
     {
         var csvFileName =
-            "C:\\Users\\Nikol\\RiderProjects\\CS_Mandatory_assignment_1\\C#Mandatory1\\Files\\Standings-Nordic.csv";
+            "C:\\Users\\Nikol\\RiderProjects\\CS_Mandatory_assignment_1\\C#Mandatory1\\Files\\Rounds\\Nordic\\part1\\round1.csv";
 
         // Create a list to store the CSV data
         var csvData = new List<string[]>();
