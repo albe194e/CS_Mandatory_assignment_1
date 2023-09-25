@@ -1,8 +1,7 @@
 ﻿namespace C_Mandatory1;
 
 public class Club
-{   
-
+{
     public string Name { get; set; }
     public int GamesPlayed { get; set; }
     public int GamesWon { get; set; }
