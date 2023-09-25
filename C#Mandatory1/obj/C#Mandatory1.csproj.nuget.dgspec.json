@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj": {}
+    "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj": {}
   },
   "projects": {
-    "c:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj": {
+    "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
+        "projectUniqueName": "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
         "projectName": "C#Mandatory1",
-        "projectPath": "c:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
+        "projectPath": "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
         "packagesPath": "C:\\Users\\bekjo\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\obj\\",
+        "outputPath": "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bekjo\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,6 +1,10 @@
+using System.Globalization;
 using C_Mandatory1;
+using CsvHelper;
 
 public class Program {
+
+    /*
      static void Main()
     {
         // Load and populate clubs from setup and teams file
@@ -20,7 +24,7 @@ public class Program {
         // Display the current standings
         DisplayStandings(clubs);
     }
-
+*/
      static void CalculateWinningStreak(List<Club> clubs)
      {
          foreach (var club in clubs)
@@ -55,6 +59,26 @@ public class Program {
         // Implement code to load clubs from setup and teams file
         // Return a list of Club objects with the necessary data.
         return new List<Club>();
+    }
+
+
+    void ProcessRound() {
+
+    }
+
+    static void Main()
+    {   
+        FileHandler fh = new FileHandler();
+
+        int currentRound = 1;
+
+        Round round = fh.ReadRound("Files\\Rounds\\Super\\part1\\round1");
+
+        Console.WriteLine(round.ToString());
+
+
+        //Load rounds
+
     }
 
 }
