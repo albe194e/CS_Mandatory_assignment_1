@@ -7,13 +7,15 @@ public class Program {
     
     static FileHandler fh = new FileHandler();
     
-    public static void Main(string[] args)    {
-        
+    public static void Main()
+    {
+
         //SetUpTeams();
 
         //Part1 = 22 round, part2 = 10 round
         int[] format = {22,10};
         
+
         //Super League
         Console.WriteLine("Super League");
         for (int i = 1; i < format[0] + 1; i++)
@@ -38,6 +40,7 @@ public class Program {
         
     }
 
+
     static void ProcessRound(League league, Part part, int currentRound) {
 
         Round round = fh.ReadRound("Files\\Rounds\\" + league + "\\" + part + "\\round" + currentRound);
@@ -45,54 +48,6 @@ public class Program {
         fh.WriteRound("Files\\Standings-" + league, round);
 
     }
-
-    
-
-     static void CalculateWinningStreak(List<Club> clubs, List<Round> rounds)
-     {
-         foreach (var club in clubs)
-         {
-            int currentStreak = 0;
-            int maxStreak = 0;
-
-            foreach (var round in rounds)
-            {
-                foreach (var match in round.Matches)
-                {
-                    if (match.HomeTeam == club.Name || match.AwayTeam == club.Name)
-                    {
-                        bool isWin = false;
-
-                        if (match.HomeTeam == club.Name && match.Result.StartsWith("2-0"))
-                        {
-                            isWin = true;
-                        }
-                        else if (match.AwayTeam == club.Name && match.Result.EndsWith("2-0"))
-                        {
-                            isWin = true;
-                        }
-
-                        if (isWin)
-                        {
-                            currentStreak++;
-
-                            if (currentStreak > maxStreak)
-                            {
-                                maxStreak = currentStreak;
-                            }
-                        }
-                        else
-                        {
-                            currentStreak = 0;
-                        }
-                    }
-                }
-            }
-
-            club.WinningStreak = new List<char>(maxStreak.ToString());
-        
-         }
-     }
 
 
     static void DisplayStandings(List<Club> clubs)
