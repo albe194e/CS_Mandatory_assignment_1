@@ -6,15 +6,23 @@ using Microsoft.VisualBasic.FileIO;
 public class Program {
     
     static FileHandler fh = new FileHandler();
-     static void Main()
+    static void Main()
     {
         
-        for (int i = 1; i < 22; i++)
-        {   
+        //Part1 = 22 round, part2 = 10 round
+        int[] format = {22,10};
+        
 
+        //Super league
+        for (int i = 1; i < format[0]; i++)
+        {   
+            
             ProcessRound(League.Nordic, i);
             
         }
+
+        //Nordic League
+
         
 
 
