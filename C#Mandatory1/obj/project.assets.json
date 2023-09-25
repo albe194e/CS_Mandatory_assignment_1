@@ -49,24 +49,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nikol\\.nuget\\packages\\": {}
+    "C:\\Users\\bekjo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nikol\\RiderProjects\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
+      "projectUniqueName": "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
       "projectName": "C#Mandatory1",
-      "projectPath": "C:\\Users\\Nikol\\RiderProjects\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
-      "packagesPath": "C:\\Users\\Nikol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nikol\\RiderProjects\\CS_Mandatory_assignment_1\\C#Mandatory1\\obj\\",
+      "projectPath": "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
+      "packagesPath": "C:\\Users\\bekjo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#Mandatory1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nikol\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\bekjo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -106,7 +108,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Nikol\\.dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

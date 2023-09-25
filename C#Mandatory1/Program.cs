@@ -1,16 +1,23 @@
 using System.Globalization;
 using C_Mandatory1;
-using CsvHelper;
-using CsvHelper.Configuration;
+
 using Microsoft.VisualBasic.FileIO;
 
 public class Program {
     
-    
+    static FileHandler fh = new FileHandler();
      static void Main()
     {
-        FileHandler fh = new FileHandler();
-        fh.ReadData();
+        
+        for (int i = 1; i < 22; i++)
+        {   
+
+            ProcessRound(League.Nordic, i);
+            
+        }
+        
+
+
         /*
         // Load and populate clubs from setup and teams file
         List<Club> clubs = LoadClubsFromFiles(); // Implement this function as per your file format.
@@ -31,7 +38,16 @@ public class Program {
         */
     }
 
-        
+    static void ProcessRound(League league, int currentRound) {
+
+        Round round = fh.ReadRound("Files\\Rounds\\" + league + "\\part1\\round" + currentRound);
+
+            foreach (Match match in round.Matches)
+            {
+                Console.WriteLine(match.HomeTeam + "::" + match.AwayTeam + "::" + match.Result);
+
+            }
+    }
     
 
      static void CalculateWinningStreak(List<Club> clubs)
