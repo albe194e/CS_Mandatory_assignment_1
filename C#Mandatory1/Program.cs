@@ -9,8 +9,9 @@ public class Program {
     public static void Main()
     {
 
-        //SetUpTeams();
-
+        fh.ResetStandings("Files\\Standings-Super");
+        fh.ResetStandings("Files\\Standings-Nordic");
+    
         //Part1 = 22 round, part2 = 10 round
         int[] format = {22,10};
         
@@ -39,7 +40,6 @@ public class Program {
         
     }
 
-
     static void ProcessRound(League league, Part part, int currentRound) {
 
         Round round = rh.ReadRound("Files\\Rounds\\" + league + "\\" + part + "\\round" + currentRound);
@@ -47,7 +47,6 @@ public class Program {
         rh.WriteRound("Files\\Standings-" + league, round);
 
     }
-
 
     static void DisplayStandings(List<Club> clubs)
     {
@@ -67,3 +66,5 @@ public class Program {
     }
 
 }
+
+
