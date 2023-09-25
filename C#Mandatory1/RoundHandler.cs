@@ -1,18 +1,17 @@
+using System.Drawing;
 using System.Globalization;
 using C_Mandatory1;
 using CsvHelper;
 using Microsoft.VisualBasic.FileIO;
 
-public class FileHandler {
+public class RoundHandler {
 
     public Round ReadRound(string fileName) {
 
         Round round = new Round();
 
         try {
-            using TextFieldParser parser = new TextFieldParser(fileName + ".csv");
-            parser.TextFieldType = FieldType.Delimited;
-            parser.SetDelimiters(",");
+            using TextFieldParser parser = FileHandler.GetNewReader(fileName);
 
             // Read and parse the CSV file line by line
             while (!parser.EndOfData)
@@ -40,9 +39,7 @@ public class FileHandler {
 
         //Read standings data
         try {
-            using TextFieldParser parser = new TextFieldParser(filePath + ".csv");
-            parser.TextFieldType = FieldType.Delimited;
-            parser.SetDelimiters(",");
+            using TextFieldParser parser = FileHandler.GetNewReader(filePath);
 
             // Read and parse the CSV file line by line
 
@@ -78,6 +75,9 @@ public class FileHandler {
         {
             Console.WriteLine($"An error occurred: {ex.Message}");
         }
+
+
+        Console.WriteLine(standings.Count);
 
         //Update the data
         foreach (Match match in round.Matches)
@@ -121,7 +121,7 @@ public class FileHandler {
 
         var clubs = standings.Keys;
 
-        foreach (var club in clubs)
+        foreach (string club in clubs)
         {
             updatesStandings.Add(standings[club]);
         }
@@ -131,11 +131,4 @@ public class FileHandler {
         writer.Dispose();
 
     }
-
-    private void updateClubStats(ref Club club, Round round) {
-
-
-    }
-
-
 }
