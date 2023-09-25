@@ -74,7 +74,7 @@ public class Program {
 
         Round round = fh.ReadRound("Files\\Rounds\\Super\\part1\\round1");
 
-        Console.WriteLine(round.ToString());
+        Console.WriteLine("Hello" + round.ToString());
 
 
         //Load rounds
