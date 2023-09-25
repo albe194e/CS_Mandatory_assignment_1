@@ -28,4 +28,9 @@ public class Club
         GoalsAgainst = goalsAgainst;
         WinningStreak = winningStreak;
     }
+
+public Club(string name) {
+    Name = name;
+}
+
 }

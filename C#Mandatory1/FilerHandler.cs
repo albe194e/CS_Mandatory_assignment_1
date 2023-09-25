@@ -3,21 +3,25 @@ using C_Mandatory1;
 using CsvHelper;
 using Microsoft.VisualBasic.FileIO;
 
-public class FileHandler {
+public class FileHandler
+{
 
-    public Round ReadRound(string fileName) {
+    public Round ReadRound(string fileName)
+    {
 
         Round round = new Round();
 
-        try {
+        try
+        {
             using TextFieldParser parser = new TextFieldParser(fileName + ".csv");
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
 
             // Read and parse the CSV file line by line
             while (!parser.EndOfData)
-            {   
-                if (parser.LineNumber == 1) {
+            {
+                if (parser.LineNumber == 1)
+                {
                     //Will ignore the headers
                     parser.ReadFields();
                     continue;
@@ -36,10 +40,11 @@ public class FileHandler {
 
     public void WriteRound(string filePath, Round round)
     {
-        Dictionary<string,Club> standings = new Dictionary<string,Club>();
+        Dictionary<string, Club> standings = new Dictionary<string, Club>();
 
         //Read standings data
-        try {
+        try
+        {
             using TextFieldParser parser = new TextFieldParser(filePath + ".csv");
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
@@ -48,7 +53,8 @@ public class FileHandler {
 
             while (!parser.EndOfData)
             {
-                if (parser.LineNumber == 1) {
+                if (parser.LineNumber == 1)
+                {
                     //Will ignore the headers
                     parser.ReadFields();
                     continue;
@@ -68,7 +74,7 @@ public class FileHandler {
                     int.Parse(fields[8]),
                     fields[9]);
 
-                
+
                 Console.WriteLine("Club: " + club.GamesPlayed);
                 standings.Add(club.Name, club);
 
@@ -88,7 +94,8 @@ public class FileHandler {
 
             //0 = tie, > 0 = home team win, < 0 away team win
             int result = homeTeamScore - awayTeamScore;
-            switch (result) {
+            switch (result)
+            {
 
                 case > 0:
                     standings[match.HomeTeam].GamesWon++;
@@ -132,7 +139,45 @@ public class FileHandler {
 
     }
 
-    private void updateClubStats(ref Club club, Round round) {
+    public void ResetStandings(string filePath)
+    {
+        StreamWriter writer = new StreamWriter(filePath + ".csv");
+        CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
+
+        List<Club> defaultStandings = new List<Club>();
+        try
+        {
+            using TextFieldParser parser = new TextFieldParser(filePath + ".csv");
+            parser.TextFieldType = FieldType.Delimited;
+            parser.SetDelimiters(",");
+
+            // Read and parse the CSV file line by line
+            while (!parser.EndOfData)
+            {
+                if (parser.LineNumber == 1)
+                {
+                    //Will ignore the headers
+                    parser.ReadFields();
+                    continue;
+                }
+                var fields = parser.ReadFields();
+                Club club = new Club(fields[2]);
+                defaultStandings.Add(club);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+
+        csvWriter.WriteRecords(defaultStandings);
+
+        csvWriter.Dispose();
+        writer.Dispose();
+
+    }
+    private void updateClubStats(ref Club club, Round round)
+    {
 
 
     }

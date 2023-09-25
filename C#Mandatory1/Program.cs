@@ -9,6 +9,8 @@ public class Program {
     public static void Main()
     {
 
+        fh.ResetStandings("Files\\Standings-Super");
+        fh.ResetStandings("Files\\Standings-Nordic");
     
         //Part1 = 22 round, part2 = 10 round
         int[] format = {22,10};
@@ -62,27 +64,6 @@ public class Program {
             Console.WriteLine(line);
         }
     }
-
-public void ResetStandings()
-{
-    // Reset Super League standings
-    foreach (Club club in League.Super)
-    {
-        club.ResetStats();
-    }
-    League.Super.Fractions.Clear();
-    League.Super.Fractions.Add(new Fraction("Upper"));
-    League.Super.Fractions.Add(new Fraction("Lower"));
-
-    // Reset Nordic League standings
-    foreach (Team team in League.Nordic.Teams)
-    {
-        team.ResetStats();
-    }
-    League.Nordic.Fractions.Clear();
-    League.Nordic.Fractions.Add(new Fraction("Upper"));
-    League.Nordic.Fractions.Add(new Fraction("Lower"));
-}
 
 }
 
