@@ -9,20 +9,29 @@ public class Program {
     static void Main()
     {
         
-        //Part1 = 22 round, part2 = 10 round
+        //Part1 = 22 rounds, part2 = 10 rounds
         int[] format = {22,10};
         
 
         //Super league
-        for (int i = 1; i < format[0]; i++)
+        for (int i = 1; i < format[0] + 1; i++)
         {   
-            
-            ProcessRound(League.Nordic, i);
-            
+            ProcessRound(League.Super, Part.part1, i);
+        }
+        for (int i = 1; i < format[1] + 1; i++)
+        {
+            ProcessRound(League.Super, Part.part2, i);
         }
 
         //Nordic League
-
+        for (int i = 1; i < format[0] + 1; i++)
+        {   
+            ProcessRound(League.Nordic, Part.part1, i);
+        }
+        for (int i = 1; i < format[1] + 1; i++)
+        {
+            ProcessRound(League.Nordic, Part.part2, i);
+        }
         
 
 
@@ -46,15 +55,12 @@ public class Program {
         */
     }
 
-    static void ProcessRound(League league, int currentRound) {
+    static void ProcessRound(League league, Part part, int currentRound) {
 
-        Round round = fh.ReadRound("Files\\Rounds\\" + league + "\\part1\\round" + currentRound);
+        Round round = fh.ReadRound("Files\\Rounds\\" + league + "\\" + part + "\\round" + currentRound);
 
-            foreach (Match match in round.Matches)
-            {
-                Console.WriteLine(match.HomeTeam + "::" + match.AwayTeam + "::" + match.Result);
+        fh.WriteRound("Files\\Standings-" + league, round);
 
-            }
     }
     
 
