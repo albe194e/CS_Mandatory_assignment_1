@@ -9,8 +9,8 @@ public class Program {
     
      static void Main()
     {
-        FileHandler fileHandler = new FileHandler();
-        
+        FileHandler fh = new FileHandler();
+        fh.ReadData();
         /*
         // Load and populate clubs from setup and teams file
         List<Club> clubs = LoadClubsFromFiles(); // Implement this function as per your file format.
