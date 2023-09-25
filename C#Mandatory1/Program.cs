@@ -1,6 +1,5 @@
 using System.Globalization;
 using C_Mandatory1;
-
 using Microsoft.VisualBasic.FileIO;
 
 public class Program {
