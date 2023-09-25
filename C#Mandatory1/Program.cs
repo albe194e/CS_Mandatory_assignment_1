@@ -5,12 +5,13 @@ using Microsoft.VisualBasic.FileIO;
 public class Program {
     
     static RoundHandler rh = new RoundHandler();
-    
+    static FileHandler fileHandler = new FileHandler();
     public static void Main()
     {
 
-        fh.ResetStandings("Files\\Standings-Super");
-        fh.ResetStandings("Files\\Standings-Nordic");
+        
+        fileHandler.ResetStandings("Files\\Standings-Super");
+        fileHandler.ResetStandings("Files\\Standings-Nordic");
     
         //Part1 = 22 round, part2 = 10 round
         int[] format = {22,10};

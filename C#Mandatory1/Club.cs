@@ -30,7 +30,16 @@ public class Club
     }
 
 public Club(string name) {
-    Name = name;
+    Position = 0;
+        SpecialRanking = '_';
+        Name = name;
+        GamesPlayed = 0;
+        GamesWon = 0;
+        GamesDrawn = 0;
+        GamesLost = 0;
+        GoalsFor = 0;
+        GoalsAgainst = 0;
+        WinningStreak = "";
 }
 
 }
