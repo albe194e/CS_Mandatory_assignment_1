@@ -5,14 +5,18 @@ using Microsoft.VisualBasic.FileIO;
 public class Program {
     
     static FileHandler fh = new FileHandler();
-    static void Main()
+    
+    public static void Main()
     {
-        
-        //Part1 = 22 rounds, part2 = 10 rounds
+
+        //SetUpTeams();
+
+        //Part1 = 22 round, part2 = 10 round
         int[] format = {22,10};
         
 
-        //Super league
+        //Super League
+        Console.WriteLine("Super League");
         for (int i = 1; i < format[0] + 1; i++)
         {   
             ProcessRound(League.Super, Part.part1, i);
@@ -23,6 +27,7 @@ public class Program {
         }
 
         //Nordic League
+        Console.WriteLine("Nordic League");
         for (int i = 1; i < format[0] + 1; i++)
         {   
             ProcessRound(League.Nordic, Part.part1, i);
@@ -32,27 +37,8 @@ public class Program {
             ProcessRound(League.Nordic, Part.part2, i);
         }
         
-
-
-        /*
-        // Load and populate clubs from setup and teams file
-        List<Club> clubs = LoadClubsFromFiles(); // Implement this function as per your file format.
-
-        // Calculate winning streak for each club
-        CalculateWinningStreak(clubs);
-
-        // Sort the clubs using LINQ
-        clubs = clubs.OrderByDescending(c => c.Points)
-                     .ThenByDescending(c => c.GoalDifference)
-                     .ThenByDescending(c => c.GoalsFor)
-                     .ThenBy(c => c.GoalsAgainst)
-                     .ThenBy(c => c.Name)
-                     .ToList();
-
-        // Display the current standings
-        DisplayStandings(clubs);
-        */
     }
+
 
     static void ProcessRound(League league, Part part, int currentRound) {
 
@@ -61,18 +47,6 @@ public class Program {
         fh.WriteRound("Files\\Standings-" + league, round);
 
     }
-    
-
-     static void CalculateWinningStreak(List<Club> clubs)
-     {
-         foreach (var club in clubs)
-         {
-             // Implement logic to calculate the winning streak for each club
-             // You can use the club's game results to determine the streak.
-             // Store the streak as a list of 'W', 'D', 'L', or dashes.
-             // Make sure to handle the case when there's no streak.
-         }
-     }
 
 
     static void DisplayStandings(List<Club> clubs)
@@ -90,11 +64,6 @@ public class Program {
 
             Console.WriteLine(line);
         }
-    }
-
-    static List<Club> LoadClubsFromFiles()
-    {
-        return new List<Club>();
     }
 
 }

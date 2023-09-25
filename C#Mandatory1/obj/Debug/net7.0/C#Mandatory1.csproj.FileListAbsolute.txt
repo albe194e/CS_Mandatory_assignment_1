@@ -32,3 +32,20 @@ C:\Users\bekjo\Desktop\SchoolGit\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debu
 C:\Users\bekjo\Desktop\SchoolGit\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.pdb
 C:\Users\bekjo\Desktop\SchoolGit\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.genruntimeconfig.cache
 C:\Users\bekjo\Desktop\SchoolGit\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\ref\C#Mandatory1.dll
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.csproj.AssemblyReference.cache
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.AssemblyInfoInputs.cache
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.AssemblyInfo.cs
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.csproj.CoreCompileInputs.cache
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.dll
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\refint\C#Mandatory1.dll
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.pdb
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\bin\Debug\net7.0\C#Mandatory1.exe
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\bin\Debug\net7.0\C#Mandatory1.deps.json
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\bin\Debug\net7.0\C#Mandatory1.runtimeconfig.json
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\bin\Debug\net7.0\C#Mandatory1.dll
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\bin\Debug\net7.0\C#Mandatory1.pdb
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\bin\Debug\net7.0\CsvHelper.dll
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.csproj.CopyComplete
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\C#Mandatory1.genruntimeconfig.cache
+C:\Users\Nikol\OneDrive\Dokumenter\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets\CS_Mandatory_assignment_1\C#Mandatory1\obj\Debug\net7.0\ref\C#Mandatory1.dll

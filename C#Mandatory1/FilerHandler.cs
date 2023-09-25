@@ -4,7 +4,7 @@ using CsvHelper;
 using Microsoft.VisualBasic.FileIO;
 
 public class FileHandler {
-    
+
     public Round ReadRound(string fileName) {
 
         Round round = new Round();
@@ -35,7 +35,7 @@ public class FileHandler {
     }
 
     public void WriteRound(string filePath, Round round)
-    {   
+    {
         Dictionary<string,Club> standings = new Dictionary<string,Club>();
 
         //Read standings data
@@ -81,7 +81,7 @@ public class FileHandler {
 
         //Update the data
         foreach (Match match in round.Matches)
-        {   
+        {
             string[] scoreStripped = match.Result.Split('-');
             int homeTeamScore = int.Parse(scoreStripped[0]);
             int awayTeamScore = int.Parse(scoreStripped[1]);
@@ -105,7 +105,6 @@ public class FileHandler {
                 default:
 
             }
-
             standings[match.HomeTeam].GamesPlayed++;
             standings[match.HomeTeam].GoalsAgainst += awayTeamScore;
             standings[match.HomeTeam].GoalsFor += homeTeamScore;
@@ -135,6 +134,8 @@ public class FileHandler {
 
     private void updateClubStats(ref Club club, Round round) {
 
-        
+
     }
+
+
 }
