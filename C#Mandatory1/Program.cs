@@ -12,24 +12,20 @@ public class Program {
         string csvFilePath = "C:\\Users\\Nikol\\RiderProjects\\CS_Mandatory_assignment_1\\C#Mandatory1\\Files\\Standings-Nordic.csv";
 
         // Create a list to store the CSV data
+        // Create a list to store the CSV data
         List<string[]> csvData = new List<string[]>();
 
         try
         {
-            using (StreamReader reader = new StreamReader("Files\\Standings-Nordic.csv"))
-            using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            using (I)
+            using (TextFieldParser parser = new TextFieldParser(csvFilePath))
             {
-                
-            }
-            {
-                csv.TextFieldType = FieldType.Delimited;
-                csv.SetDelimiters(",");
+                parser.TextFieldType = FieldType.Delimited;
+                parser.SetDelimiters(",");
 
                 // Read and parse the CSV file line by line
-                while (!csv.EndOfData)
+                while (!parser.EndOfData)
                 {
-                    string[] fields = csv.ReadFields();
+                    string[] fields = parser.ReadFields();
                     csvData.Add(fields);
                 }
             }
@@ -51,7 +47,8 @@ public class Program {
         {
             Console.WriteLine($"An error occurred: {ex.Message}");
         }
-        
+    }
+
         /*
         // Load and populate clubs from setup and teams file
         List<Club> clubs = LoadClubsFromFiles(); // Implement this function as per your file format.
@@ -70,7 +67,7 @@ public class Program {
         // Display the current standings
         DisplayStandings(clubs);
         */
-    }
+    
 
      static void CalculateWinningStreak(List<Club> clubs)
      {
