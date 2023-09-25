@@ -17,21 +17,17 @@ public class FileHandler {
         return parser;
     }
 
- public void ResetStandings(string filePath)
+    public static void ResetStandings(string filePath)
     {
-        StreamWriter writer = new StreamWriter(filePath + ".csv");
-        CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
 
         List<Club> defaultStandings = new List<Club>();
         try
         {
-            using TextFieldParser parser = new TextFieldParser(filePath + ".csv");
-            parser.TextFieldType = FieldType.Delimited;
-            parser.SetDelimiters(",");
+            using TextFieldParser parser = GetNewReader(filePath);
 
             // Read and parse the CSV file line by line
             while (!parser.EndOfData)
-            {
+            {   
                 if (parser.LineNumber == 1)
                 {
                     //Will ignore the headers
@@ -39,6 +35,7 @@ public class FileHandler {
                     continue;
                 }
                 var fields = parser.ReadFields();
+
                 Club club = new Club(fields[2]);
                 defaultStandings.Add(club);
             }
@@ -47,6 +44,11 @@ public class FileHandler {
         {
             Console.WriteLine($"An error occurred: {ex.Message}");
         }
+
+        Console.WriteLine(defaultStandings.Count);
+
+        StreamWriter writer = new StreamWriter(filePath + ".csv");
+        CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
 
         csvWriter.WriteRecords(defaultStandings);
 

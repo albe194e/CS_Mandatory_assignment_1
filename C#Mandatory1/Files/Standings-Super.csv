@@ -1,13 +1,13 @@
-Position,Special Ranking,Team,M,W,D,L,GF,GA,GD,P,Streak
-0,0,Aarhus Gymnastikforening,0,0,0,0,0,0,0,0,0
-0,0,Brøndby IF,0,0,0,0,0,0,0,0,0
-0,0,FC København,0,0,0,0,0,0,0,0,0
-0,0,FC Midtjylland,0,0,0,0,0,0,0,0,0
-0,0,FC Nordsjælland,0,0,0,0,0,0,0,0,0
-0,0,Hvidovre IF,0,0,0,0,0,0,0,0,0
-0,0,Lyngby Boldklub,0,0,0,0,0,0,0,0,0
-0,0,Odense Boldklub,0,0,0,0,0,0,0,0,0
-0,0,Randers FC,0,0,0,0,0,0,0,0,0
-0,0,Silkeborg IF,0,0,0,0,0,0,0,0,0
-0,0,Vejle Boldklub,0,0,0,0,0,0,0,0,0
-0,0,Viborg FF,0,0,0,0,0,0,0,0,0
+Position,SpecialRanking,Name,GamesPlayed,GamesWon,GamesDrawn,GamesLost,GoalsFor,GoalsAgainst,GoalDifference,Points,WinningStreak
+0,_,Aarhus Gymnastikforening,0,0,0,0,0,0,0,0,
+0,_,Brøndby IF,0,0,0,0,0,0,0,0,
+0,_,FC København,0,0,0,0,0,0,0,0,
+0,_,FC Midtjylland,0,0,0,0,0,0,0,0,
+0,_,FC Nordsjælland,0,0,0,0,0,0,0,0,
+0,_,Hvidovre IF,0,0,0,0,0,0,0,0,
+0,_,Lyngby Boldklub,0,0,0,0,0,0,0,0,
+0,_,Odense Boldklub,0,0,0,0,0,0,0,0,
+0,_,Randers FC,0,0,0,0,0,0,0,0,
+0,_,Silkeborg IF,0,0,0,0,0,0,0,0,
+0,_,Vejle Boldklub,0,0,0,0,0,0,0,0,
+0,_,Viborg FF,0,0,0,0,0,0,0,0,

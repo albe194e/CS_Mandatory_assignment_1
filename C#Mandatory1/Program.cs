@@ -9,9 +9,8 @@ public class Program {
     public static void Main()
     {
 
-        
-        fileHandler.ResetStandings("Files\\Standings-Super");
-        fileHandler.ResetStandings("Files\\Standings-Nordic");
+        FileHandler.ResetStandings("Files\\Standings-Super");
+        FileHandler.ResetStandings("Files\\Standings-Nordic");
     
         //Part1 = 22 round, part2 = 10 round
         int[] format = {22,10};
@@ -21,22 +20,22 @@ public class Program {
         Console.WriteLine("Super League");
         for (int i = 1; i < format[0] + 1; i++)
         {   
-            ProcessRound(League.Super, Part.part1, i);
+            //ProcessRound(League.Super, Part.part1, i);
         }
         for (int i = 1; i < format[1] + 1; i++)
         {
-            ProcessRound(League.Super, Part.part2, i);
+            //ProcessRound(League.Super, Part.part2, i);
         }
 
         //Nordic League
         Console.WriteLine("Nordic League");
         for (int i = 1; i < format[0] + 1; i++)
         {   
-            ProcessRound(League.Nordic, Part.part1, i);
+            //ProcessRound(League.Nordic, Part.part1, i);
         }
         for (int i = 1; i < format[1] + 1; i++)
         {
-            ProcessRound(League.Nordic, Part.part2, i);
+            //ProcessRound(League.Nordic, Part.part2, i);
         }
         
     }
