@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0mLUjGHWEIDUmxMsCcUobJhDf32FYs+xirdSV5RABCVHj1jMGZn6ZrEqNxYCKyMtxwVaHbHtHKYKNny7nyFrPQ==",
+  "dgSpecHash": "Izscfiqo0qHaxda5yI+7IzZ0GKYVBw9QcB1AB+A5agf7XpENDiuuf/2nza4qsosOnW3nZx80onc6WdJvsOgPzQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Nikol\\OneDrive\\Dokumenter\\Visual Studio 2022\\Code Snippets\\Visual C#\\My Code Snippets\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
+  "projectFilePath": "C:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nikol\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
   ],

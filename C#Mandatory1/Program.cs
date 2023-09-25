@@ -5,7 +5,6 @@ using Microsoft.VisualBasic.FileIO;
 public class Program {
     
     static RoundHandler rh = new RoundHandler();
-    static FileHandler fileHandler = new FileHandler();
     public static void Main()
     {
 
@@ -20,22 +19,22 @@ public class Program {
         Console.WriteLine("Super League");
         for (int i = 1; i < format[0] + 1; i++)
         {   
-            //ProcessRound(League.Super, Part.part1, i);
+            ProcessRound(League.Super, Part.part1, i);
         }
         for (int i = 1; i < format[1] + 1; i++)
         {
-            //ProcessRound(League.Super, Part.part2, i);
+            ProcessRound(League.Super, Part.part2, i);
         }
 
         //Nordic League
         Console.WriteLine("Nordic League");
         for (int i = 1; i < format[0] + 1; i++)
         {   
-            //ProcessRound(League.Nordic, Part.part1, i);
+            ProcessRound(League.Nordic, Part.part1, i);
         }
         for (int i = 1; i < format[1] + 1; i++)
         {
-            //ProcessRound(League.Nordic, Part.part2, i);
+            ProcessRound(League.Nordic, Part.part2, i);
         }
         
     }
