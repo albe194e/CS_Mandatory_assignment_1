@@ -1,7 +1,6 @@
-using System.Drawing;
 using System.Globalization;
 using C_Mandatory1;
-using CsvHelper;
+using CsvHandler;
 using Microsoft.VisualBasic.FileIO;
 
 public class RoundHandler {
@@ -11,7 +10,9 @@ public class RoundHandler {
         Round round = new Round();
 
         try {
-            using TextFieldParser parser = FileHandler.GetNewReader(fileName);
+            using TextFieldParser parser = new TextFieldParser(fileName + ".csv");
+            parser.TextFieldType = FieldType.Delimited;
+            parser.SetDelimiters(",");
 
             // Read and parse the CSV file line by line
             while (!parser.EndOfData)
@@ -39,7 +40,9 @@ public class RoundHandler {
 
         //Read standings data
         try {
-            using TextFieldParser parser = FileHandler.GetNewReader(filePath);
+            using TextFieldParser parser = new TextFieldParser(filePath + ".csv");
+            parser.TextFieldType = FieldType.Delimited;
+            parser.SetDelimiters(",");
 
             // Read and parse the CSV file line by line
 
@@ -75,9 +78,6 @@ public class RoundHandler {
         {
             Console.WriteLine($"An error occurred: {ex.Message}");
         }
-
-
-        Console.WriteLine(standings.Count);
 
         //Update the data
         foreach (Match match in round.Matches)
@@ -121,7 +121,7 @@ public class RoundHandler {
 
         var clubs = standings.Keys;
 
-        foreach (string club in clubs)
+        foreach (var club in clubs)
         {
             updatesStandings.Add(standings[club]);
         }
@@ -131,4 +131,45 @@ public class RoundHandler {
         writer.Dispose();
 
     }
+
+
+    public void ResetStandings(string filePath)
+    {
+        StreamWriter writer = new StreamWriter(filePath + ".csv");
+        CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
+
+        List<Club> defaultStandings = new List<Club>();
+        try
+        {
+            using TextFieldParser parser = new TextFieldParser(filePath + ".csv");
+            parser.TextFieldType = FieldType.Delimited;
+            parser.SetDelimiters(",");
+
+            // Read and parse the CSV file line by line
+            while (!parser.EndOfData)
+            {
+                if (parser.LineNumber == 1)
+                {
+                    //Will ignore the headers
+                    parser.ReadFields();
+                    continue;
+                }
+                var fields = parser.ReadFields();
+                Club club = new Club(fields[2]);
+                defaultStandings.Add(club);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+
+        csvWriter.WriteRecords(defaultStandings);
+
+        csvWriter.Dispose();
+        writer.Dispose();
+
+    }
+
+
 }
