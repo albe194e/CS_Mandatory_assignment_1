@@ -11,9 +11,9 @@ public class Club
     public int GoalsAgainst { get; set; }
     public int GoalDifference => GoalsFor - GoalsAgainst;
     public int Points => (GamesWon * 3) + GamesDrawn;
-    public List<char> WinningStreak { get; set; }
+    public string WinningStreak { get; set; }
 
-    public Club(string name, int gamesPlayed, int gamesWon, int gamesDrawn, int gamesLost, int goalsFor, int goalsAgainst, List<char> winningStreak)
+    public Club(string name, int gamesPlayed, int gamesWon, int gamesDrawn, int gamesLost, int goalsFor, int goalsAgainst, string winningStreak)
     {
         Name = name;
         GamesPlayed = gamesPlayed;

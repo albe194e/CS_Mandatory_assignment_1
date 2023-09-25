@@ -14,72 +14,36 @@ public class Program {
         //Part1 = 22 round, part2 = 10 round
         int[] format = {22,10};
         
+        //Super League
+        Console.WriteLine("Super League");
+        for (int i = 1; i < format[0] + 1; i++)
+        {   
+            ProcessRound(League.Super, Part.part1, i);
+        }
+        for (int i = 1; i < format[1] + 1; i++)
+        {
+            ProcessRound(League.Super, Part.part2, i);
+        }
+
         //Nordic League
         Console.WriteLine("Nordic League");
-        for (int i = 1; i < format[0]; i++)
+        for (int i = 1; i < format[0] + 1; i++)
         {   
-            
-            ProcessRound(League.Nordic, i);
-            
+            ProcessRound(League.Nordic, Part.part1, i);
         }
-
-        //Super league
-        Console.WriteLine("Super League");
-        for (int i = 1; i < format[0]; i++)
-        {   
-            
-            ProcessRound(League.Super, i);
-            
+        for (int i = 1; i < format[1] + 1; i++)
+        {
+            ProcessRound(League.Nordic, Part.part2, i);
         }
         
-    
-
-
     }
 
-    static void SetUpTeams()
-    {
-        List<Club> nordicClubs = new List<Club>();
-        List<Club> superClubs = new List<Club>();
+    static void ProcessRound(League league, Part part, int currentRound) {
 
-        // Read Nordic League teams
-        using (TextFieldParser parser = new TextFieldParser("Files/Leagues/Nordic/teams.csv"))
-        {
-            parser.TextFieldType = FieldType.Delimited;
-            parser.SetDelimiters(",");
+        Round round = fh.ReadRound("Files\\Rounds\\" + league + "\\" + part + "\\round" + currentRound);
 
-            while (!parser.EndOfData)
-            {
-                string[] fields = parser.ReadFields();
-                nordicClubs.Add(new Club(fields[0], 0, 0, 0, 0, 0, 0, new List<char>()));
-            }
-        }
+        fh.WriteRound("Files\\Standings-" + league, round);
 
-        // Read Super League teams
-        using (TextFieldParser parser = new TextFieldParser("Files/Leagues/Super/teams.csv"))
-        {
-            parser.TextFieldType = FieldType.Delimited;
-            parser.SetDelimiters(",");
-
-            while (!parser.EndOfData)
-            {
-                string[] fields = parser.ReadFields();
-                superClubs.Add(new Club(fields[0], 0, 0, 0, 0, 0, 0, new List<char>()));
-            }
-        }
-
-        // Do something with the lists of clubs
-    }
-
-    static void ProcessRound(League league, int currentRound) {
-
-        Round round = fh.ReadRound("Files\\Rounds\\" + league + "\\part1\\round" + currentRound);
-
-            foreach (Match match in round.Matches)
-            {
-                Console.WriteLine(match.HomeTeam + "::" + match.AwayTeam + "::" + match.Result);
-
-            }
     }
 
     
