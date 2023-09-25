@@ -1,5 +1,3 @@
-using CsvHelper.Configuration.Attributes;
-
 public class Match {
 
     public string HomeTeam { get; set; }
