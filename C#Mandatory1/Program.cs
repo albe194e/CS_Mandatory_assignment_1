@@ -21,16 +21,17 @@ public class Program {
         DisplayStandings(clubs);
     }
 
-    static void CalculateWinningStreak(List<Club> clubs)
-    {
-        foreach (var club in clubs)
-        {
-            // Implement logic to calculate the winning streak for each club
-            // You can use the club's game results to determine the streak.
-            // Store the streak as a list of 'W', 'D', 'L', or dashes.
-            // Make sure to handle the case when there's no streak.
-        }
-    }
+     static void CalculateWinningStreak(List<Club> clubs)
+     {
+         foreach (var club in clubs)
+         {
+             // Implement logic to calculate the winning streak for each club
+             // You can use the club's game results to determine the streak.
+             // Store the streak as a list of 'W', 'D', 'L', or dashes.
+             // Make sure to handle the case when there's no streak.
+         }
+     }
+
 
     static void DisplayStandings(List<Club> clubs)
     {
@@ -55,4 +56,5 @@ public class Program {
         // Return a list of Club objects with the necessary data.
         return new List<Club>();
     }
+
 }
