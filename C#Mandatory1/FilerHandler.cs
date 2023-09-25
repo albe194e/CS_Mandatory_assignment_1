@@ -16,7 +16,12 @@ public class FileHandler {
 
             // Read and parse the CSV file line by line
             while (!parser.EndOfData)
-            {
+            {   
+                if (parser.LineNumber == 1) {
+                    //Will ignore the headers
+                    parser.ReadFields();
+                    continue;
+                }
                 var fields = parser.ReadFields();
                 round.addMatch(fields[0], fields[1], fields[2]);
             }
@@ -52,6 +57,8 @@ public class FileHandler {
                 var fields = parser.ReadFields();
 
                 Club club = new Club(
+                    int.Parse(fields[0]),
+                    char.Parse(fields[1]),
                     fields[2],
                     int.Parse(fields[3]),
                     int.Parse(fields[4]),
@@ -88,12 +95,12 @@ public class FileHandler {
                     standings[match.AwayTeam].GamesLost++;
                     break;
                 case < 0:
-                    standings[match.HomeTeam].GamesDrawn++;
-                    standings[match.AwayTeam].GamesDrawn++;
-                    break;
-                case 0:
                     standings[match.HomeTeam].GamesLost++;
                     standings[match.AwayTeam].GamesWon++;
+                    break;
+                case 0:
+                    standings[match.HomeTeam].GamesDrawn++;
+                    standings[match.AwayTeam].GamesDrawn++;
                     break;
                 default:
 
