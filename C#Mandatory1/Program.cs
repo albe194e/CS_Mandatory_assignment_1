@@ -1,8 +1,58 @@
+using System.Globalization;
 using C_Mandatory1;
+using CsvHelper;
+using CsvHelper.Configuration;
+using Microsoft.VisualBasic.FileIO;
 
 public class Program {
+    
+    
      static void Main()
     {
+        string csvFilePath = "C:\\Users\\Nikol\\RiderProjects\\CS_Mandatory_assignment_1\\C#Mandatory1\\Files\\Standings-Nordic.csv";
+
+        // Create a list to store the CSV data
+        List<string[]> csvData = new List<string[]>();
+
+        try
+        {
+            using (StreamReader reader = new StreamReader("Files\\Standings-Nordic.csv"))
+            using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (I)
+            {
+                
+            }
+            {
+                csv.TextFieldType = FieldType.Delimited;
+                csv.SetDelimiters(",");
+
+                // Read and parse the CSV file line by line
+                while (!csv.EndOfData)
+                {
+                    string[] fields = csv.ReadFields();
+                    csvData.Add(fields);
+                }
+            }
+
+            // Now, 'csvData' contains the CSV content as a list of string arrays,
+            // where each string array represents a row of data.
+
+            // You can process the data as needed, e.g., iterate through rows and columns.
+            foreach (var row in csvData)
+            {
+                foreach (var field in row)
+                {
+                    Console.Write($"{field}\t");
+                }
+                Console.WriteLine();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+        
+        /*
         // Load and populate clubs from setup and teams file
         List<Club> clubs = LoadClubsFromFiles(); // Implement this function as per your file format.
 
@@ -19,6 +69,7 @@ public class Program {
 
         // Display the current standings
         DisplayStandings(clubs);
+        */
     }
 
      static void CalculateWinningStreak(List<Club> clubs)
@@ -52,8 +103,43 @@ public class Program {
 
     static List<Club> LoadClubsFromFiles()
     {
-        // Implement code to load clubs from setup and teams file
-        // Return a list of Club objects with the necessary data.
+        string csvFilePath = "Teams-Nordic.csv";
+
+        // Create a list to store the CSV data
+        List<string[]> csvData = new List<string[]>();
+
+        try
+        {
+            using (TextFieldParser parser = new TextFieldParser(csvFilePath))
+            {
+                parser.TextFieldType = FieldType.Delimited;
+                parser.SetDelimiters(",");
+
+                // Read and parse the CSV file line by line
+                while (!parser.EndOfData)
+                {
+                    string[] fields = parser.ReadFields();
+                    csvData.Add(fields);
+                }
+            }
+
+            // Now, 'csvData' contains the CSV content as a list of string arrays,
+            // where each string array represents a row of data.
+
+            // You can process the data as needed, e.g., iterate through rows and columns.
+            foreach (var row in csvData)
+            {
+                foreach (var field in row)
+                {
+                    Console.Write($"{field}\t");
+                }
+                Console.WriteLine();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
         return new List<Club>();
     }
 
