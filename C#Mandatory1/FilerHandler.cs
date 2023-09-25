@@ -9,7 +9,8 @@ public class FileHandler {
         Round round = new Round();
 
         try {
-            using TextFieldParser parser = new TextFieldParser(fileName + ".csv");
+            using TextFieldParser parser = new TextFieldParser(
+                fileName + ".csv");
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
 

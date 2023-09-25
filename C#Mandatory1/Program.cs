@@ -6,14 +6,16 @@ using Microsoft.VisualBasic.FileIO;
 public class Program {
     
     static FileHandler fh = new FileHandler();
-    static void Main()
-    {
+    
+    public static void Main(string[] args)    {
         
+        //SetUpTeams();
+
         //Part1 = 22 round, part2 = 10 round
         int[] format = {22,10};
         
-
-        //Super league
+        //Nordic League
+        Console.WriteLine("Nordic League");
         for (int i = 1; i < format[0]; i++)
         {   
             
@@ -21,29 +23,52 @@ public class Program {
             
         }
 
-        //Nordic League
-
+        //Super league
+        Console.WriteLine("Super League");
+        for (int i = 1; i < format[0]; i++)
+        {   
+            
+            ProcessRound(League.Super, i);
+            
+        }
         
+    
 
 
-        /*
-        // Load and populate clubs from setup and teams file
-        List<Club> clubs = LoadClubsFromFiles(); // Implement this function as per your file format.
+    }
 
-        // Calculate winning streak for each club
-        CalculateWinningStreak(clubs);
+    static void SetUpTeams()
+    {
+        List<Club> nordicClubs = new List<Club>();
+        List<Club> superClubs = new List<Club>();
 
-        // Sort the clubs using LINQ
-        clubs = clubs.OrderByDescending(c => c.Points)
-                     .ThenByDescending(c => c.GoalDifference)
-                     .ThenByDescending(c => c.GoalsFor)
-                     .ThenBy(c => c.GoalsAgainst)
-                     .ThenBy(c => c.Name)
-                     .ToList();
+        // Read Nordic League teams
+        using (TextFieldParser parser = new TextFieldParser("Files/Leagues/Nordic/teams.csv"))
+        {
+            parser.TextFieldType = FieldType.Delimited;
+            parser.SetDelimiters(",");
 
-        // Display the current standings
-        DisplayStandings(clubs);
-        */
+            while (!parser.EndOfData)
+            {
+                string[] fields = parser.ReadFields();
+                nordicClubs.Add(new Club(fields[0], 0, 0, 0, 0, 0, 0, new List<char>()));
+            }
+        }
+
+        // Read Super League teams
+        using (TextFieldParser parser = new TextFieldParser("Files/Leagues/Super/teams.csv"))
+        {
+            parser.TextFieldType = FieldType.Delimited;
+            parser.SetDelimiters(",");
+
+            while (!parser.EndOfData)
+            {
+                string[] fields = parser.ReadFields();
+                superClubs.Add(new Club(fields[0], 0, 0, 0, 0, 0, 0, new List<char>()));
+            }
+        }
+
+        // Do something with the lists of clubs
     }
 
     static void ProcessRound(League league, int currentRound) {
@@ -56,16 +81,52 @@ public class Program {
 
             }
     }
+
     
 
-     static void CalculateWinningStreak(List<Club> clubs)
+     static void CalculateWinningStreak(List<Club> clubs, List<Round> rounds)
      {
          foreach (var club in clubs)
          {
-             // Implement logic to calculate the winning streak for each club
-             // You can use the club's game results to determine the streak.
-             // Store the streak as a list of 'W', 'D', 'L', or dashes.
-             // Make sure to handle the case when there's no streak.
+            int currentStreak = 0;
+            int maxStreak = 0;
+
+            foreach (var round in rounds)
+            {
+                foreach (var match in round.Matches)
+                {
+                    if (match.HomeTeam == club.Name || match.AwayTeam == club.Name)
+                    {
+                        bool isWin = false;
+
+                        if (match.HomeTeam == club.Name && match.Result.StartsWith("2-0"))
+                        {
+                            isWin = true;
+                        }
+                        else if (match.AwayTeam == club.Name && match.Result.EndsWith("2-0"))
+                        {
+                            isWin = true;
+                        }
+
+                        if (isWin)
+                        {
+                            currentStreak++;
+
+                            if (currentStreak > maxStreak)
+                            {
+                                maxStreak = currentStreak;
+                            }
+                        }
+                        else
+                        {
+                            currentStreak = 0;
+                        }
+                    }
+                }
+            }
+
+            club.WinningStreak = new List<char>(maxStreak.ToString());
+        
          }
      }
 
@@ -85,11 +146,6 @@ public class Program {
 
             Console.WriteLine(line);
         }
-    }
-
-    static List<Club> LoadClubsFromFiles()
-    {
-        return new List<Club>();
     }
 
 }
