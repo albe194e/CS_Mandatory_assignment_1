@@ -10,9 +10,7 @@ public class RoundHandler {
         Round round = new Round();
 
         try {
-            using TextFieldParser parser = new TextFieldParser(fileName + ".csv");
-            parser.TextFieldType = FieldType.Delimited;
-            parser.SetDelimiters(",");
+            using TextFieldParser parser = FileHandler.GetNewReader(fileName);
 
             // Read and parse the CSV file line by line
             while (!parser.EndOfData)
@@ -22,8 +20,8 @@ public class RoundHandler {
                     parser.ReadFields();
                     continue;
                 }
-                var fields = parser.ReadFields();
-                round.addMatch(fields[0], fields[1], fields[2]);
+                var data = parser.ReadFields();
+                round.addMatch(data[0], data[1], data[2]);
             }
         }
         catch (Exception ex)
@@ -34,18 +32,15 @@ public class RoundHandler {
         return round;
     }
 
-    public void WriteRound(string filePath, Round round)
+    public void WriteRound(string fileName, Round round)
     {
         Dictionary<string,Club> standings = new Dictionary<string,Club>();
 
         //Read standings data
         try {
-            using TextFieldParser parser = new TextFieldParser(filePath + ".csv");
-            parser.TextFieldType = FieldType.Delimited;
-            parser.SetDelimiters(",");
-
+            using TextFieldParser parser = FileHandler.GetNewReader(fileName);
+            
             // Read and parse the CSV file line by line
-
             while (!parser.EndOfData)
             {
                 if (parser.LineNumber == 1) {
@@ -54,19 +49,19 @@ public class RoundHandler {
                     continue;
                 }
 
-                var fields = parser.ReadFields();
+                var data = parser.ReadFields();
 
                 Club club = new Club(
-                    int.Parse(fields[0]),
-                    char.Parse(fields[1]),
-                    fields[2],
-                    int.Parse(fields[3]),
-                    int.Parse(fields[4]),
-                    int.Parse(fields[5]),
-                    int.Parse(fields[6]),
-                    int.Parse(fields[7]),
-                    int.Parse(fields[8]),
-                    fields[9]);
+                    int.Parse(data[0]),
+                    char.Parse(data[1]),
+                    data[2],
+                    int.Parse(data[3]),
+                    int.Parse(data[4]),
+                    int.Parse(data[5]),
+                    int.Parse(data[6]),
+                    int.Parse(data[7]),
+                    int.Parse(data[8]),
+                    data[9]);
 
                 
                 Console.WriteLine("Club: " + club.GamesPlayed);
@@ -114,7 +109,7 @@ public class RoundHandler {
             standings[match.AwayTeam].GoalsFor += awayTeamScore;
         }
 
-        StreamWriter writer = new StreamWriter(filePath + ".csv");
+        StreamWriter writer = new StreamWriter(fileName + ".csv");
         CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
 
         List<Club> updatesStandings = new List<Club>();

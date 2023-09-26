@@ -20,7 +20,6 @@ public class FileHandler {
 
     public static void ResetStandings(string filePath)
     {
-
         List<Club> defaultStandings = new List<Club>();
         try
         {
@@ -57,6 +56,4 @@ public class FileHandler {
         writer.Dispose();
 
     }
-
-
 }

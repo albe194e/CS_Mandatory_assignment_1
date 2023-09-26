@@ -4,7 +4,7 @@ using Microsoft.VisualBasic.FileIO;
 
 public class Program {
     
-    static RoundHandler rh = new RoundHandler();
+    static readonly RoundHandler rh = new RoundHandler();
     
     public static void Main()
     {
@@ -37,7 +37,6 @@ public class Program {
         {
             //ProcessRound(League.Nordic, Part.part2, i);
         }
-        
     }
 
     static void ProcessRound(League league, Part part, int currentRound) {
@@ -64,7 +63,4 @@ public class Program {
             Console.WriteLine(line);
         }
     }
-
 }
-
-
