@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj": {}
+    "c:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj": {
+    "c:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
+        "projectUniqueName": "c:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
         "projectName": "C#Mandatory1",
-        "projectPath": "C:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
+        "projectPath": "c:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
         "packagesPath": "C:\\Users\\Nikol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\obj\\",
+        "outputPath": "c:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nikol\\AppData\\Roaming\\NuGet\\NuGet.Config"

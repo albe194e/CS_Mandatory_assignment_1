@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Izscfiqo0qHaxda5yI+7IzZ0GKYVBw9QcB1AB+A5agf7XpENDiuuf/2nza4qsosOnW3nZx80onc6WdJvsOgPzQ==",
+  "dgSpecHash": "+64+FYcXkepX3+Bb99KEkrkC3z04GTpnYnDXpUzRPWq0X/z/7i01Xo5zJl/lEZYzmC3BnfOC+WSeD3GT9iPplQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
+  "projectFilePath": "c:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nikol\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
   ],
