@@ -13,9 +13,9 @@ public class Club
     public int GoalsAgainst { get; set; }
     public int GoalDifference => GoalsFor - GoalsAgainst;
     public int Points => (GamesWon * 3) + GamesDrawn;
-    public string WinningStreak { get; set; }
+    public int WinningStreak { get; set; }
 
-    public Club(int position, char specialRanking, string name, int gamesPlayed, int gamesWon, int gamesDrawn, int gamesLost, int goalsFor, int goalsAgainst, string winningStreak)
+    public Club(int position, char specialRanking, string name, int gamesPlayed, int gamesWon, int gamesDrawn, int gamesLost, int goalsFor, int goalsAgainst, int winningStreak)
     {
         Position = position;
         SpecialRanking = specialRanking;
@@ -30,24 +30,29 @@ public class Club
     }
 
     public Club(string name) {
-    Position = 0;
-        SpecialRanking = '_';
-                Position = 0;
+            Position = 0;
             SpecialRanking = '_';
             Name = name;
-        GamesPlayed = 0;
-        GamesWon = 0;
-        GamesDrawn = 0;
-        GamesLost = 0;
-        GoalsFor = 0;
-        GoalsAgainst = 0;
-        WinningStreak = "";
             GamesPlayed = 0;
             GamesWon = 0;
             GamesDrawn = 0;
             GamesLost = 0;
             GoalsFor = 0;
             GoalsAgainst = 0;
-            WinningStreak = "";
+            WinningStreak = 0;
+    }
+
+
+    public override string ToString() {
+
+        return "\nClub: " + Name +
+               "\nPos : " + Position +
+               "\nGamesPlayed: " + GamesPlayed +
+               "\nGamesWon: " + GamesWon +
+               "\nGamesDrawn: " + GamesDrawn +
+               "\nGamesLost: " + GamesLost +
+               "\nGoalsFor: " + GoalsFor +
+               "\nGoalsAgains: " + GoalsAgainst +
+               "\nStreak: " + WinningStreak;
     }
 }

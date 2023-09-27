@@ -5,74 +5,63 @@ using Microsoft.VisualBasic.FileIO;
 
 public class RoundHandler {
 
+
+    public void ProcessRound(League league, Part part, int currentRound) {
+
+
+        Round round = ReadRound(Path.rounds + league + "\\" + part + "\\round" + currentRound);
+
+        switch (league) {
+            case League.Super:
+                WriteRound(Path.standings_super, round);
+                break;
+            case League.Nordic:
+                WriteRound(Path.standings_nordic, round);
+                break;
+            default:
+                break;
+        }
+    }
+
     public Round ReadRound(string fileName) {
 
         Round round = new Round();
 
-        try {
-            using TextFieldParser parser = FileHandler.GetNewReader(fileName);
+        List<string[]> data = FileHandler.readFile(fileName);
 
-            // Read and parse the CSV file line by line
-            while (!parser.EndOfData)
-            {   
-                if (parser.LineNumber == 1) {
-                    //Will ignore the headers
-                    parser.ReadFields();
-                    continue;
-                }
-                var data = parser.ReadFields();
-                round.addMatch(data[0], data[1], data[2]);
-            }
-        }
-        catch (Exception ex)
+        foreach (string[] line in data)
         {
-            Console.WriteLine($"An error occurred: {ex.Message}");
+            round.addMatch(line[0], line[1], line[2]);
         }
 
         return round;
     }
 
     public void WriteRound(string fileName, Round round)
-    {
+    {   
+        
         Dictionary<string,Club> standings = new Dictionary<string,Club>();
 
         //Read standings data
-        try {
-            using TextFieldParser parser = FileHandler.GetNewReader(fileName);
-            
-            // Read and parse the CSV file line by line
-            while (!parser.EndOfData)
-            {
-                if (parser.LineNumber == 1) {
-                    //Will ignore the headers
-                    parser.ReadFields();
-                    continue;
-                }
+        List<string[]> data = FileHandler.readFile(fileName);
 
-                var data = parser.ReadFields();
-
-                Club club = new Club(
-                    int.Parse(data[0]),
-                    char.Parse(data[1]),
-                    data[2],
-                    int.Parse(data[3]),
-                    int.Parse(data[4]),
-                    int.Parse(data[5]),
-                    int.Parse(data[6]),
-                    int.Parse(data[7]),
-                    int.Parse(data[8]),
-                    data[9]);
-
-                
-                Console.WriteLine("Club: " + club.GamesPlayed);
-                standings.Add(club.Name, club);
-
-            }
-        }
-        catch (Exception ex)
+        foreach (string[] line in data)
         {
-            Console.WriteLine($"An error occurred: {ex.Message}");
+            Club club = new Club(
+            int.Parse(line[0]),
+            char.Parse(line[1]),
+            line[2],
+            int.Parse(line[3]),
+            int.Parse(line[4]),
+            int.Parse(line[5]),
+            int.Parse(line[6]),
+            int.Parse(line[7]),
+            int.Parse(line[8]),
+            int.Parse(line[9]));
+
+            standings.Add(club.Name, club);
         }
+        
 
         //Update the data
         foreach (Match match in round.Matches)
@@ -86,14 +75,20 @@ public class RoundHandler {
             switch (result) {
 
                 case > 0:
+                    UpdateStreak(standings[match.HomeTeam], 1);
+                    UpdateStreak(standings[match.AwayTeam], -1);
                     standings[match.HomeTeam].GamesWon++;
                     standings[match.AwayTeam].GamesLost++;
                     break;
                 case < 0:
+                    UpdateStreak(standings[match.HomeTeam], -1);
+                    UpdateStreak(standings[match.AwayTeam], 1);
                     standings[match.HomeTeam].GamesLost++;
                     standings[match.AwayTeam].GamesWon++;
                     break;
                 case 0:
+                    UpdateStreak(standings[match.HomeTeam], 0);
+                    UpdateStreak(standings[match.AwayTeam], 0);
                     standings[match.HomeTeam].GamesDrawn++;
                     standings[match.AwayTeam].GamesDrawn++;
                     break;
@@ -112,18 +107,43 @@ public class RoundHandler {
         StreamWriter writer = new StreamWriter(fileName + ".csv");
         CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
 
-        List<Club> updatesStandings = new List<Club>();
+        List<Club> updatedStandings = new List<Club>();
 
         var clubs = standings.Keys;
 
-        foreach (var club in clubs)
+        foreach (string club in clubs)
         {
-            updatesStandings.Add(standings[club]);
+            updatedStandings.Add(standings[club]);
         }
-        csvWriter.WriteRecords(updatesStandings);
+
+        updatedStandings.Sort((x, y) => x.Points.CompareTo(y.Points));
+        for (int i = 0; i < updatedStandings.Count; i++)
+        {
+            updatedStandings[i].Position = updatedStandings.Count - i;
+        }
+
+        csvWriter.WriteRecords(updatedStandings);
 
         csvWriter.Dispose();
         writer.Dispose();
 
+    }
+
+    private void UpdateStreak(Club club, int result) {
+        
+        //Result: 1 = win, -1 = loss, 0 = tie
+        switch (club.WinningStreak)
+        {
+
+            case 0:
+                club.WinningStreak = result;
+                break;
+            case > 0:
+                club.WinningStreak = (club.WinningStreak < 0) ? result : club.WinningStreak++;
+                break;
+            case < 0:
+                club.WinningStreak = (club.WinningStreak > 0) ? result : club.WinningStreak--;
+                break;
+        }
     }
 }
