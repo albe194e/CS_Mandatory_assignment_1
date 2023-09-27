@@ -1,13 +1,13 @@
 Position,SpecialRanking,Name,GamesPlayed,GamesWon,GamesDrawn,GamesLost,GoalsFor,GoalsAgainst,GoalDifference,Points,WinningStreak
-12,_,Næstved BK,22,1,4,17,6,34,-28,7,-28
+12,_,Næstved BK,22,1,4,17,6,34,-28,7,-26
 11,_,Hillerød Fodbold,22,0,10,12,16,35,-19,10,-19
-10,_,Boldklubben AF 1893,22,5,7,10,17,27,-10,22,-10
-9,_,AC Horsens,22,6,8,8,23,25,-2,26,-2
-8,_,HB Køge,22,7,8,7,29,28,1,29,1
-7,_,Kolding IF,22,9,2,11,19,21,-2,29,-2
-6,_,FC Fredericia,22,9,3,10,21,23,-2,30,-2
-5,_,Hobro IK,22,8,7,7,32,33,-1,31,-1
+10,_,Boldklubben AF 1893,22,5,7,10,17,27,-10,22,-9
+9,_,AC Horsens,22,6,8,8,23,25,-2,26,-3
+8,_,HB Køge,22,7,8,7,29,28,1,29,-1
+7,_,Kolding IF,22,9,2,11,19,21,-2,29,-1
+6,_,FC Fredericia,22,9,3,10,21,23,-2,30,-1
+5,_,Hobro IK,22,8,7,7,32,33,-1,31,2
 4,_,FC Helsingør,22,9,7,6,17,15,2,34,2
-3,_,Vensyssel FC,22,12,4,6,29,23,6,40,6
-2,_,Sønderjyske Fodbold,22,14,3,5,32,14,18,45,18
-1,_,Aalborg boldklub,22,20,1,1,48,11,37,61,37
+3,_,Vensyssel FC,22,12,4,6,29,23,6,40,5
+2,_,Sønderjyske Fodbold,22,14,3,5,32,14,18,45,17
+1,_,Aalborg boldklub,22,20,1,1,48,11,37,61,34
