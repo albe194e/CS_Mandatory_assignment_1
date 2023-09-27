@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Lo27eOZ40u7x1GxrlOVfnD+/himjCHYkjhhvD6GbAZWOXP2BY00hirCklBqcyAs2HHEvoxgazx7z55tiRg+WKA==",
+  "dgSpecHash": "+64+FYcXkepX3+Bb99KEkrkC3z04GTpnYnDXpUzRPWq0X/z/7i01Xo5zJl/lEZYzmC3BnfOC+WSeD3GT9iPplQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bekjo\\Desktop\\SchoolGit\\CS_Mandatory_assignment_1\\C#mandatory1\\C#Mandatory1.csproj",
+  "projectFilePath": "c:\\Users\\Nikol\\OneDrive\\Skrivebord\\Skole\\Project\\CS_Mandatory_assignment_1\\C#Mandatory1\\C#Mandatory1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bekjo\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
+    "C:\\Users\\Nikol\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
   ],
   "logs": []
 }
